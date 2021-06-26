@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+<div class="col-md-12 mx-auto">
+  <span class="title">Book Store</span>
+  <div id="row1-cards" class="row mx-5 mt-3 row-cols-1 row-cols-md-2 row-cols-lg-4">
+  <section *ngFor="let book of books$ | async; let i = index">
+
+    <div class="card col m-3" [ngClass]="{'highlight':checkIfCardIsClicked(i)}" (click)="getBookById(book,i)" style="width: 15rem;">
+      <img class="card-img-top" [src]="book.image" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{book.name}}</h5>
+        <p class="card-text">
+          {{book.decription}}.</p>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+  </div>
+</div>
+
+<div *ngIf="loadBook" class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <span class="title">Book Details</span>
+  <section *ngFor="let book of book$ | async">
+    <div class="container">
+      <div class="d-inline-block">
+        <ul class="list-group">
+          <li class="list-group-item">Book Id : {{book.id}}</li>
+          <li class="list-group-item">Name : {{book.name}}</li>
+          <li class="list-group-item">Author : {{book.author}}</li>
+          <li class="list-group-item">Price : {{book.price}}</li>
+          <li class="list-group-item">Publication Year : {{book.publication}}</li>
+          <li class="list-group-item">Description : {{book.decription}}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+  </div>
+</div>
+
+

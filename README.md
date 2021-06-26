@@ -1,5 +1,29 @@
 # BookStoreApplication
 
+Application Modules:
+
+1. Components
+
+2. NgRx state management using selectore, Action, Reducer and Effects.
+
+##Login Component:[Username: test@test.com, password: test]
+
+Admin can login with the above mentioned username and password.
+
+HttpClientInMemoryWebApiModule is used to mock the backend.It returns token of the admin. Upon successful logon, the token is stored in the state.
+
+Incase of incorrect username and password combination , error is thrown and the same is also set in the state.
+
+## Book-List Component:
+
+Upon successful Authentication, admin is navigated to the book store where he can view list of books displayed.On click of the book, the admin can view the detils of the book.
+
+HttpClientInMemoryWebApiModule is used to mock the backend.
+
+An event is dispatched from the component to fetch the books and store it in the state.
+
+On click of the book, the details of the book are fetched from the state.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
 
 ## Development server
